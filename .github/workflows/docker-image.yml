@@ -22,7 +22,7 @@ jobs:
         docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
         
     - name: Build the docker image
-      run: docker build . --file Dockerfile --tag litte-nginx-app:$(date +%s)
+      run: docker build . --file Dockerfile --tag  ${{secrets.DOCKER_USER}}/litte-nginx-app:$(date +%s)
       
     - name: Docker push
       run: docker push ${{secrets.DOCKER_USER}}/little-nginx-app
