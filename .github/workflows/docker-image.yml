@@ -22,7 +22,7 @@ jobs:
         docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
         
     - name: Build the docker image
-      run: docker build . --file Dockerfile --tag  kiranjagz/litte-nginx-app:latest
+      run: docker build . --file Dockerfile --tag  kiranjagz/little-nginx-app:latest
       
     - name: Docker push
       run: docker push kiranjagz/little-nginx-app:latest
